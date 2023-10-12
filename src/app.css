@@ -1,3 +1,14 @@
 @tailwind base;
-@tailwind components;
 @tailwind utilities;
+@tailwind components;
+
+@layer base {
+	@font-face {
+		font-family: 'Fira Sans';
+		src: url('/src/static/fonts/Fira Sans/FiraSans-Regular.ttf');
+		font-weight: normal;
+		font-display: swap;
+	}
+	
+}
+
