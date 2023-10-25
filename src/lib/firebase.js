@@ -1,8 +1,9 @@
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
-import { getAuth, onAuthStateChanged } from "firebase/auth";
+import { getAuth, onAuthStateChanged, signOut } from "firebase/auth";
 import { getStorage } from "firebase/storage";
 import { writable } from "svelte/store";
+
 
 const firebaseConfig = {
     apiKey: "AIzaSyACYSmviTxOZ3ZR-ehB301x1OktQ-2vNoY",
@@ -14,37 +15,36 @@ const firebaseConfig = {
   measurementId: "G-NQVYMRMFDP"
 };
 
-// Initialize Firebase
-export const app = initializeApp(firebaseConfig);
+const app = initializeApp(firebaseConfig);
 export const db = getFirestore();
-export const auth = getAuth();
+export const auth = getAuth()
 export const storage = getStorage();
 
+//Firebase Auth Store
+function createUserAuth(){
+	const { subscribe, set, update } = writable();
 
+	return{
+		subscribe,
+    updateAuth: (authObj) => {set(authObj)},
+    logout: () => {signOut(auth).then(() => {set(null)}).catch((error) => {console.log(error)});},
 
+	}
 
-
-
-
-
-
-
-
-function createUserAuth() {
-
-  let unsubscribe
-	
-  const { subscribe } = writable(auth?.currentUser ?? null, (set) => {
-    unsubscribe = onAuthStateChanged(auth, (user) => {
-      set(user);
-      console.log("Grabbed Auth")
-    });
-
-    return () => unsubscribe();
-  });
-
-  return {
-    subscribe,
-  };
 }
 export const userAuthStore = createUserAuth()
+
+
+
+
+
+
+
+
+onAuthStateChanged(auth, (user) => {
+  if (user) {
+    userAuthStore.updateAuth(user)
+    console.log("authed")
+  } else {
+    userAuthStore.updateAuth(null)
+}});

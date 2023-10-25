@@ -2,6 +2,10 @@
 @tailwind utilities;
 @tailwind components;
 
+body{
+	overflow:hidden
+}
+
 @layer base {
 	@font-face {
 		font-family: 'Fira Sans';
