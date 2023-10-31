@@ -2,6 +2,8 @@
 
 import { collection, query, where, getDocs } from "firebase/firestore";
 import { db } from "../../../lib/firebase"
+import { goto } from "$app/navigation";
+
 
 const getListings = async () => {
     const q = query(collection(db, "items"));
@@ -39,7 +41,7 @@ const getListings = async () => {
               <h1 class="font-semibold text-dark-text text-xl">{listing.name}</h1>
               <h2 class="font-medium text-dark-disabled text-ml ">{listing.brand}</h2>
               <h3 class="mx-auto my-auto font-medium text-dark-text text-2xl">£{listing.price}</h3>
-              <button class="bg-dark-brand1 w-20 mx-auto mt-auto rounded-md text-dark-text font-semibold py-0.5">Buy Now</button>
+              <button on:click={() => {goto("/listings/123")}} class="bg-dark-brand1 w-20 mx-auto mt-auto rounded-md text-dark-text font-semibold py-0.5">Buy Now</button>
             </div>
           
           </div>
