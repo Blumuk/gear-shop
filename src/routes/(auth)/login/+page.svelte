@@ -43,7 +43,7 @@
 
 <main class="flex flex-col items-center">
     <img class="w-16 h-16" src={fleaImage} alt="">
-    <h1 class="font-firaSans text-xl text-dark-text mb-2">Login to Fleagear</h1>
+    <h1 class="font-firaSans text-xl text-dark-text mb-2 font-work-sans mt-2 font-medium">Login to Kitflipper</h1>
     <div class="h-9 w-90 flex flex-row my-4 shadow-md rounded-md"><div class="w-10 h-full bg-dark-backgroundSecondaryLight rounded-bl-md rounded-tl-md border-solid border border-dark-backgroundSecondaryLight flex flex-row items-center justify-center"><Mail color='#cfcfcf' /></div><input type="email" placeholder="Email" class="w-[21.5rem] h-9 outline-none rounded-tr-md rounded-br-md bg-dark-backgroundSecondary font-firaSans text-dark-text border-solid border-2 border-dark-backgroundSecondaryLight indent-2 placeholder-dark-disabled" ></div>
     <div class="h-9 w-90 flex flex-row mb-4 shadow-md rounded-md"><div class="w-10 h-full bg-dark-backgroundSecondaryLight rounded-bl-md rounded-tl-md border-solid border border-dark-backgroundSecondaryLight flex flex-row items-center justify-center"><KeyRound color='#cfcfcf' /></div><input type="password" placeholder="Password" class="w-[21.5rem] h-9 outline-none rounded-tr-md rounded-br-md bg-dark-backgroundSecondary font-firaSans text-dark-text border-solid border-2 border-dark-backgroundSecondaryLight indent-2 placeholder-dark-disabled" ></div>
     <button class="text-dark-text bg-dark-brand1 mx-auto h-9 rounded-md shadow-sm hover:shadow-lg transition ease-linear duration-150  font-firaSans w-96 font-semibold" on:click={async () => {}}>Login</button>

@@ -36,6 +36,21 @@ export const userAuthStore = createUserAuth()
 
 
 
+function createUserData(){
+	const { subscribe, set, update } = writable();
+
+	return{
+		subscribe,
+    updateAuth: (authObj) => {set(authObj)},
+    logout: () => {signOut(auth).then(() => {set(null)}).catch((error) => {console.log(error)});},
+
+	}
+
+}
+export const userDataStore = createUserData()
+
+
+
 
 
 

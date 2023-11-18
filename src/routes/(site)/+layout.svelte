@@ -18,9 +18,9 @@
 
 <main class="h-full overflow-hidden bg-dark-backgroundSecondary">
     <div class="w-full h-16 bg-dark-backgroundPrimary flex flex-row items-center shadow-md">
-        <h1 class="font-sans font-semibold text-xl ml-2 text-dark-text">Fleagear</h1>
+        <h1 class=" font-semibold text-xl ml-4 text-dark-text font-work-sans">Kitflipper</h1>
 
-        <div class="h-9 w-90 flex flex-row mb-4 shadow-md rounded-md mx-auto my-auto"><input type="text" placeholder="Search for Gear..." class="w-[21.5rem] h-9 outline-none rounded-tl-md rounded-bl-md bg-dark-backgroundSecondary font-firaSans text-dark-text border-solid border-2 border-dark-backgroundSecondaryLight indent-2 placeholder-dark-disabled" ><div class="w-10 h-full bg-dark-backgroundSecondaryLight rounded-br-md rounded-tr-md border-solid border border-dark-backgroundSecondaryLight flex flex-row items-center justify-center"><button on:click={() => {goto("/listings")}} class="h-full w-full flex items-center justify-center"><Search color='#f5f6fa'/></button></div></div>
+        <div class="h-9 w-90 flex flex-row mb-4 shadow-sm rounded-md mx-auto my-auto"><input type="text" placeholder="Search for Gear..." class="w-[21.5rem] font-work-sans h-9 outline-none rounded-tl-md rounded-bl-md bg-dark-backgroundSecondary font-firaSans text-dark-text border-solid border-2 border-dark-backgroundSecondaryLight indent-2 placeholder-dark-disabled" ><div class="w-10 h-full bg-dark-backgroundSecondaryLight rounded-br-md rounded-tr-md border-solid border border-dark-backgroundSecondaryLight flex flex-row items-center justify-center"><button on:click={() => {goto("/listings")}} class="h-full w-full flex items-center justify-center"><Search color='#f5f6fa'/></button></div></div>
            
            {#if $userAuthStore}
                 
@@ -31,7 +31,7 @@
                 
                 
            {:else}
-             <button on:click={() => {goto("/login")}} class="w-20 h-8 bg-black mr-4 rounded-md text-white">Sign In</button>
+             <button on:click={() => {goto("/login")}} class="w-20 h-8 bg-dark-backgroundSecondary mr-4 rounded-md text-dark-text font-work-sans font-medium shadow-md hover:shadow-xl transition ease-linear duration-150">Sign In</button>
            {/if}
            
            
