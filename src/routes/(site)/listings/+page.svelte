@@ -83,7 +83,7 @@ function sortByChanged(){
  
   
   
-  <div class="w-1/3 h-full">
+  <div class="w-3/6 h-full">
   
   <div class="w-full h-12 flex flex-row items-center my-1">
     <select id="sortBySelect" on:change={() => {sortByChanged()}} class="mr-auto h-7 w-36 rounded-md font-work-sans shadow-sm hover:shadow-md transition ease-linear duration-100 bg-dark-backgroundPrimary my-auto text-dark-text text-xs text-center outline-none">
@@ -105,12 +105,12 @@ function sortByChanged(){
 
    {#if gridMode}
      
-   <div class=" w-full grid grid-cols-4 gap-4 ">
+   <div class=" w-full grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-4 ">
 
     {#each listingArrayGlob as listing}
-        <div on:click={() => {goto("/listings/123")}} class="w-[201px] h-72 bg-dark-backgroundPrimary rounded-md shadow-md flex flex-col items-center hover:shadow-xl transition ease-linear duration-150 cursor-pointer px-3 overflow-hidden">
-          <img class="w-44 h-36 mt-3 rounded-md object-cover brightness-90 mb-1" src={listing.images[0]} alt="">
-          <h2 class="text-dark-text text-sm font-medium font-work-sans mr-auto truncate">{listing.name}</h2>
+        <div on:click={() => {goto("/listings/123")}} class="w-42 h-72 sm:h-64 bg-dark-backgroundPrimary rounded-md shadow-md flex flex-col items-center hover:shadow-xl transition ease-linear duration-150 cursor-pointer px-3 overflow-hidden">
+          <img class="w-11/12 h-36 sm:h-26 mt-3 rounded-md object-cover brightness-90 mb-1" src={listing.images[0]} alt="">
+          <h2 class="text-dark-text text-xs font-medium font-work-sans mr-auto truncate">{listing.name}</h2>
           <h3 class="text-dark-disabled text-xs font-regular font-work-sans mr-auto">{listing.brand}</h3>
           <h1 class="text-dark-text text-md font-medium mt-auto font-work-sans mr-auto flex flex-row">£{listing.price}</h1>       
           <h3 class="text-dark-disabled text-sm font-regular font-work-sans mr-auto mb-auto flex flex-row">£6.99<Truck class="pb-1"  color='#6f6f6f'/></h3>

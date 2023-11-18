@@ -34,7 +34,7 @@ const getListings = async () => {
         
     <div class="grid grid-cols-5 h-auto gap-4">
 
-        <div on:click={() => {goto("/listings/123")}} class="w-[201px] h-72 bg-dark-backgroundPrimary rounded-md shadow-md flex flex-col items-center hover:shadow-xl transition ease-linear duration-150 cursor-pointer overflow-hidden">
+        <div on:click={() => {goto("/myprofile/listings/create")}} class="w-[201px] h-72 bg-dark-backgroundPrimary rounded-md shadow-md flex flex-col items-center hover:shadow-xl transition ease-linear duration-150 cursor-pointer overflow-hidden">
             <h1 class="mt-auto mb-3 font-medium text-xl text-dark-text">Create Listing</h1>
             <PlusCircle class="mb-auto" color='#f1f2f6'/>
         </div>
